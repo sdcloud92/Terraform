@@ -1,6 +1,6 @@
 # Create subnet group for RDS instance
-resource "aws_db_subnet_group" "Project-db-subnet-grp" {
-  name       = "project-db-subnet-grp"
+resource "aws_db_subnet_group" "Projectdbsubnetgrp" {
+  name       = "projectdbsubnetgrp"
   subnet_ids = [aws_subnet.Project-privsub1.id, aws_subnet.Project-privsub2.id]
 
   tags = {
@@ -20,6 +20,6 @@ resource "aws_db_instance" "projectdbinstance" {
   username               = var.db_username
   password               = var.db_password
   vpc_security_group_ids = [aws_security_group.Project-mysql-sg.id]
-  db_subnet_group_name   = aws_db_subnet_group.Project-db-subnet-grp.name # Fix reference to subnet group name
+  db_subnet_group_name   = aws_db_subnet_group.Projectdbsubnetgrp.name # Fix reference to subnet group name
   skip_final_snapshot    = true
 }
