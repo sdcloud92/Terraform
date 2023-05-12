@@ -20,6 +20,6 @@ resource "aws_db_instance" "Project-dbinstance" {
   username               = var.db_username
   password               = var.db_password
   vpc_security_group_ids = [aws_security_group.Project-mysql-sg.id]
-  db_subnet_group_name   = aws_db_subnet_group.Project-db-subnet-grp.name # Associate with subnet group
+  db_subnet_group_name   = aws_db_subnet_group.Project-db-subnet-grp.name # Fix reference to subnet group name
   skip_final_snapshot    = true
 }
