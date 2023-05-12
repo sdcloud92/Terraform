@@ -17,7 +17,7 @@ resource "aws_db_instance" "Project-dbinstance" {
 #subnet group for RDS instance
 resource "aws_db_subnet_group" "Project-db-subnet-grp" {
   name       = "project-db-subnet-grp"
-  subnet_ids = [aws_subnet.Project-privsub1.id, aws_subnet.Project-privsub1.id]
+  subnet_ids = [aws_subnet.Project-privsub1.id, aws_subnet.Project-privsub2.id]
 
   tags = {
     Name = "Project DB private subnet group"
