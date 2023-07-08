@@ -46,7 +46,7 @@ resource "aws_subnet" "Project-pubsub2" {
 
 #create an elastic IP to assign to NAT Gateway
 resource "aws_eip" "Project-eip1" {
-  vpc        = true
+  domain = "vpc"
   depends_on = [aws_vpc.Project-vpc]
   tags = {
     Name = "Project-eip1"
@@ -55,7 +55,7 @@ resource "aws_eip" "Project-eip1" {
 
 #create an elastic IP to assign to NAT Gateway
 resource "aws_eip" "Project-eip2" {
-  vpc        = true
+  domain = "vpc"
   depends_on = [aws_vpc.Project-vpc]
   tags = {
     Name = "Project-eip2"
